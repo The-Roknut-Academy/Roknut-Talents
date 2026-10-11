@@ -1,5 +1,4 @@
 # ⚔️ RokNut Talents is LIVE! ⚔️
-@everyone
 
 The **RokNut Academy** talent builder for Rise of Kingdoms is officially here, with a fresh RokNut look and a big data refresh!
 
