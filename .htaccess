@@ -1,0 +1,58 @@
+# ---- RokNut Talents on IONOS (Apache) - flat layout ----
+Options -Indexes -MultiViews
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Block env, dotfiles, maps, and helper PHP (only source.php may run)
+RewriteRule (^|/)\.(?!well-known) - [F,L]
+RewriteRule \.(env|map|md|log|bak|sql|ini|psd)$ - [F,L]
+RewriteRule ^env\.php$ - [F,L]
+
+# Hotlink protection for images (same host or empty referer allowed)
+RewriteCond %{REQUEST_URI} \.(png|jpe?g|gif|svg|ico|webp)$ [NC]
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_HOST}@@%{HTTP_REFERER} !^([^@]+)@@https?://\1/ [NC]
+RewriteRule .* - [F,L]
+
+# Block site rippers, command-line downloaders and empty user agents
+RewriteCond %{HTTP_USER_AGENT} ^$ [OR]
+RewriteCond %{HTTP_USER_AGENT} (httrack|webcopier|teleport|webzip|offline\ explorer|sitesucker|blackwidow|cyotek|wget|curl|libwww|python-requests|scrapy|go-http-client|heritrix) [NC]
+RewriteRule .* - [F,L]
+</IfModule>
+
+<FilesMatch "^(\.env|\.htaccess)$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Strict-Transport-Security "max-age=31536000"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  # Everything is hosted in this one folder, so the policy only needs 'self'.
+  # To let other sites embed the app, add their origins after frame-ancestors, e.g. https://example.com
+  # Drop any Content-Security-Policy inherited from a parent folder's .htaccess before setting ours
+  Header unset Content-Security-Policy
+  Header always unset Content-Security-Policy
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; manifest-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'"
+  Header unset X-Powered-By
+  <FilesMatch "\.(js|css|png|svg|ico|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(html|json)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+ServerSignature Off

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="nut" cx="50%" cy="38%" r="75%">
+      <stop offset="0" stop-color="#ffe0a0"/>
+      <stop offset=".45" stop-color="#e59a2e"/>
+      <stop offset=".85" stop-color="#9a5410"/>
+      <stop offset="1" stop-color="#6b3508"/>
+    </radialGradient>
+    <radialGradient id="face" cx="50%" cy="35%" r="80%">
+      <stop offset="0" stop-color="#fff0c8"/>
+      <stop offset=".55" stop-color="#f2b84b"/>
+      <stop offset="1" stop-color="#b8701c"/>
+    </radialGradient>
+    <radialGradient id="hole" cx="50%" cy="50%" r="60%">
+      <stop offset="0" stop-color="#3a2415"/>
+      <stop offset="1" stop-color="#150b05"/>
+    </radialGradient>
+    <radialGradient id="r" cx="50%" cy="45%" r="70%"><stop offset="0" stop-color="#ffd6a9"/><stop offset=".6" stop-color="#d0734f"/><stop offset="1" stop-color="#ab2609"/></radialGradient>
+    <radialGradient id="y" cx="50%" cy="45%" r="70%"><stop offset="0" stop-color="#fcf9a2"/><stop offset=".6" stop-color="#dcbc5b"/><stop offset="1" stop-color="#b77608"/></radialGradient>
+    <radialGradient id="b" cx="50%" cy="45%" r="70%"><stop offset="0" stop-color="#c1f4ff"/><stop offset=".6" stop-color="#47a1d3"/><stop offset="1" stop-color="#0364af"/></radialGradient>
+  </defs>
+  <!-- hex nut body -->
+  <polygon points="256,14 466,135 466,377 256,498 46,377 46,135" fill="url(#nut)" stroke="#1b110a" stroke-width="12" stroke-linejoin="round"/>
+  <!-- bevel face -->
+  <polygon points="256,56 430,156 430,356 256,456 82,356 82,156" fill="url(#face)" stroke="#7a4210" stroke-width="6" stroke-linejoin="round"/>
+  <!-- hole -->
+  <circle cx="256" cy="256" r="128" fill="url(#hole)" stroke="#6b3508" stroke-width="10"/>
+  <circle cx="256" cy="256" r="128" fill="none" stroke="#ffe0a0" stroke-opacity=".55" stroke-width="3" transform="translate(0 -3)"/>
+  <!-- talent trio: red top, yellow bottom-left, blue bottom-right -->
+  <g stroke="#000" stroke-width="5" stroke-linejoin="round">
+    <polygon points="256,142 300,167 300,217 256,242 212,217 212,167" fill="url(#r)" transform="translate(0 -4)"/>
+    <polygon points="256,142 300,167 300,217 256,242 212,217 212,167" fill="url(#y)" transform="translate(-45 74)"/>
+    <polygon points="256,142 300,167 300,217 256,242 212,217 212,167" fill="url(#b)" transform="translate(45 74)"/>
+  </g>
+</svg>
