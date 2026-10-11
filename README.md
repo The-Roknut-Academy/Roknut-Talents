@@ -39,7 +39,7 @@ Some commanders are **not currently available**. They use the newer **Engineerin
 
 ## 🛠️ Built On
 RokNut Talents is based on the open-source **RoK Talents** project, licensed under **GPL v3**.
-`https://github.com/thesimonho/rok-talents`
+``https://github.com/thesimonho/rok-talents``
 
 ## 🙏 Credits
 Huge thanks to **Simon Ho**, creator of the original RoK Talents, which this tool is built on.
