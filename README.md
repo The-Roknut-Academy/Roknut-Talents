@@ -5,19 +5,19 @@ The **RokNut Academy** talent builder for Rise of Kingdoms is officially here, w
 🔗 **Try it now:** https://theroknutacademy.com/talent-builder/
 
 ## ✨ Features
-🛡️ 100+ commanders to choose from
-🌳 Full talent trees (Red / Yellow / Blue) with click-to-assign points
-📊 Live Stats panel showing your build's bonuses as you go
-🔗 **Shareable links** so you can send your exact build to anyone
-📸 Save a screenshot of your build (with or without stats)
-🔄 One-click reset to start over
-📤 Share straight to social media
-💾 Your settings are remembered between visits
-⚙️ Expert settings to build faster (see below)
-🧭 Guided tour and built-in instructions for new users
-📜 Release history and notes inside the app
-🎨 New RokNut theme, logo and icons
-🚫 No ads, no analytics
+-🛡️ 100+ commanders to choose from
+-🌳 Full talent trees (Red / Yellow / Blue) with click-to-assign points
+-📊 Live Stats panel showing your build's bonuses as you go
+-🔗 **Shareable links** so you can send your exact build to anyone
+-📸 Save a screenshot of your build (with or without stats)
+-🔄 One-click reset to start over
+-📤 Share straight to social media
+-💾 Your settings are remembered between visits
+-⚙️ Expert settings to build faster (see below)
+-🧭 Guided tour and built-in instructions for new users
+-📜 Release history and notes inside the app
+-🎨 New RokNut theme, logo and icons
+-🚫 No ads, no analytics
 
 ## ⚙️ Settings & Auto Fill
 Open **Settings** to switch on some handy tools:
